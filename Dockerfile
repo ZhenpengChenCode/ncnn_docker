@@ -32,7 +32,11 @@ RUN cd /root && wget https://sdk.lunarg.com/sdk/download/1.1.114.0/linux/vulkans
     && export VULKAN_SDK=`pwd`/1.1.114.0/x86_64
 
 RUN cd /root && git clone https://github.com/tencent/ncnn && cd ncnn && git checkout 20200616
-RUN mkdir -p /root/ncnn/build && cd /root/ncnn/build && cmake -DNCNN_VULKAN=ON .. && make -j4
+RUN export VULKAN_SDK=/root/1.1.114.0/x86_64 \
+    && mkdir -p /root/ncnn/build \
+    && cd /root/ncnn/build \
+    && cmake -DNCNN_VULKAN=ON .. \
+    && make -j4
 
 # instll opencv for building example
 RUN cd /root/ncnn && mkdir -p build && cd build && cmake .. && make -j4
