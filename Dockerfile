@@ -31,7 +31,8 @@ RUN         apt-get update \
 #    && tar -xf vulkansdk-linux-x86_64-1.1.114.0.tar.gz \
 #    && export VULKAN_SDK=`pwd`/1.1.114.0/x86_64
 
-RUN cd /root && git clone https://github.com/tencent/ncnn && cd ncnn && git checkout 20200616
+RUN cd /root && git clone https://github.com/tencent/ncnn && cd ncnn
+#&& git checkout 20200616
 #RUN export VULKAN_SDK=/root/1.1.114.0/x86_64 \
 #    && mkdir -p /root/ncnn/build \
 #    && cd /root/ncnn/build \
