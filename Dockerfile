@@ -40,4 +40,4 @@ RUN cd /root && git clone https://github.com/tencent/ncnn && cd ncnn
 #    && make -j4
 
 # instll opencv for building example
-RUN cd /root/ncnn && mkdir -p build && cd build && cmake .. && make -j4
+#RUN cd /root/ncnn && mkdir -p build && cd build && cmake .. && make -j4
