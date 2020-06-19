@@ -27,16 +27,16 @@ RUN         apt-get update \
                 && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 100 \
                 && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.9 100
 
-RUN cd /root && wget https://sdk.lunarg.com/sdk/download/1.1.114.0/linux/vulkansdk-linux-x86_64-1.1.114.0.tar.gz?Human=true -O vulkansdk-linux-x86_64-1.1.114.0.tar.gz \
-    && tar -xf vulkansdk-linux-x86_64-1.1.114.0.tar.gz \
-    && export VULKAN_SDK=`pwd`/1.1.114.0/x86_64
+#RUN cd /root && wget https://sdk.lunarg.com/sdk/download/1.1.114.0/linux/vulkansdk-linux-x86_64-1.1.114.0.tar.gz?Human=true -O vulkansdk-linux-x86_64-1.1.114.0.tar.gz \
+#    && tar -xf vulkansdk-linux-x86_64-1.1.114.0.tar.gz \
+#    && export VULKAN_SDK=`pwd`/1.1.114.0/x86_64
 
 RUN cd /root && git clone https://github.com/tencent/ncnn && cd ncnn && git checkout 20200616
-RUN export VULKAN_SDK=/root/1.1.114.0/x86_64 \
-    && mkdir -p /root/ncnn/build \
-    && cd /root/ncnn/build \
-    && cmake -DNCNN_VULKAN=ON .. \
-    && make -j4
+#RUN export VULKAN_SDK=/root/1.1.114.0/x86_64 \
+#    && mkdir -p /root/ncnn/build \
+#    && cd /root/ncnn/build \
+#    && cmake -DNCNN_VULKAN=ON .. \
+#    && make -j4
 
 # instll opencv for building example
 RUN cd /root/ncnn && mkdir -p build && cd build && cmake .. && make -j4
