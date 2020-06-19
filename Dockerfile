@@ -17,6 +17,7 @@ RUN         apt-get update \
                     libopencv-dev \
                     git \
                     htop \
+                    python-pip \
                 && add-apt-repository -y ppa:ubuntu-toolchain-r/test \
                 && apt-get update \
                 && apt-get install -y \
