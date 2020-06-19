@@ -7,6 +7,13 @@ RUN         apt-get update \
                     software-properties-common \
                     wget \
                     build-essential \
+                    libgtk2.0-dev \
+                    libavcodec-dev \
+                    libavformat-dev \
+                    libjpeg.dev \
+                    libtiff4.dev \
+                    libswscale-dev \
+                    libjasper-dev
                     libopencv-dev \
                     git \
                     htop \
