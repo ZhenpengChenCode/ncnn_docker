@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
 COPY sources.list /etc/apt/sources.list
 RUN apt-get update && apt-get install -y build-essential libopencv-dev cmake git htop
